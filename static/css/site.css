@@ -99,15 +99,6 @@ footer#footer > div.right {
 	text-align: right;
 }
 
-
-h1 {
-	font-size: 24px;
-}
-
-h2 {
-	font-size: 20px;
-}
-
 a {
 	outline: 0;
 	color: #66d9ef;
@@ -261,7 +252,7 @@ aside, nav, article, figure {
 	display: block;
 }
 
-/***** Layout *****/
+/* Layout */
 .body {clear: both; margin: 0 auto; max-width: 800px;}
 img.right, figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: left; margin: 0 2em 2em 0;}
@@ -271,9 +262,7 @@ section.bibliography {
 	padding-top: 2em;
 }
 
-/*
-	Featured
-*****************/
+/* Featured */
 #featured {
 	/*background: #161713;*/
 	margin-bottom: 2em;
@@ -291,16 +280,7 @@ section.bibliography {
 }
 #featured figure img {display: block; float: right;}
 
-/*#featured h2 {font-size: 1.714em; margin-bottom: 0.333em;}
-#featured h3 {font-size: 1.429em; margin-bottom: .5em;}
-
-#featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
-#featured h3 a:hover, #featured h3 a:active {color: #fff;}
-*/
-
-/*
-	Body
-*****************/
+/* Body */
 #content {
 	padding: 20px 20px;
 	max-width: 800px;
@@ -320,12 +300,10 @@ section.bibliography {
 	margin-left: 5px;
 }
 
-/*
-	Extras
-*****************/
+/* Footer */
 #extras {margin: 0 auto 3em auto; overflow: hidden;}
 
-#extras ul {list-style: none; margin: 0;}
+
 #extras li {border-bottom: 1px solid #fff;}
 #extras h2 {
 	color: #C74350;
@@ -334,68 +312,41 @@ section.bibliography {
 	padding: 0 3px;
 }
 
-#extras a:link, #extras a:visited {
-	color: #444;
-	display: block;
-	border-bottom: 1px solid #F4E3E3;
-	text-decoration: none;
-	padding: .3em .25em;
-}
-
-#extras a:hover, #extras a:active {color: #fff;}
-
-/* Social */
-#extras .social {
-	float: right;
-	width: 175px;
-}
-
-#extras div[class='social'] a {
+.footer a {
 	background-repeat: no-repeat;
-	background-position: 3px 6px;
-	padding-left: 25px;
+	background-position: 0px 0px;
+	background-size: 10px 10px;
+	margin-right: 0.2em;
 }
+.footer ul, .footer li {list-style: none;}
 
 /* Icons */
-.social a[href*='bitbucket.org'] {background-image: url('../images/icons/bitbucket.png');}
-.social a[href*='github.com'], .social a[href*='github.io'] {
+.footer a[href*='bitbucket.org'] {
+	background-image: url('../images/icons/bitbucket.png');
+	padding-left: 15px;
+}
+.footer a[href*='linkedin.com'] {
+	background-image: url('../images/icons/linkedin.png');
+	padding-left: 15px;
+}
+.footer a[href*='stackoverflow.com'] {
+	background-image: url('../images/icons/stackoverflow.png');
+	padding-left: 15px;
+}
+.footer a[href*='youtube.com'] {
+	background-image: url('../images/icons/youtube.png');
+	padding-left: 15px;
+}
+.footer a[href*='github.com'], .footer a[href*='github.io'] {
 	background-image: url('../images/icons/github.png');
-	background-size: 16px 16px;
+	padding-left: 15px;
 }
-.social a[href*='linkedin.com'] {background-image: url('../images/icons/linkedin.png');}
-.social a[type$='atom+xml'], .social a[type$='rss+xml'] {background-image: url('../images/icons/rss.png');}
-.social a[href*='stackoverflow.com'] {background-image: url('../images/icons/stackoverflow.png');}
-.social a[href*='youtube.com'] {background-image: url('../images/icons/youtube.png');}
-
-/*
-	About
-*****************/
-#about {
-	background: #161713;
-	font-style: normal;
-	margin-bottom: 2em;
-	overflow: hidden;
-	padding: 20px;
-	text-align: left;
-	width: 760px;
-
-	border-radius: 10px;
+.footer a[type$='atom+xml'], .footer a[type$='rss+xml'] {
+	background-image: url('../images/icons/rss.png');
+	padding-left: 15px;
 }
 
-#about .primary {float: left; width: 165px;}
-#about .primary strong {color: #C64350; display: block; font-size: 1.286em;}
-#about .photo {float: left; margin: 5px 20px;}
-
-#about .url:link, #about .url:visited {text-decoration: none;}
-
-#about .bio {float: right; width: 500px;}
-
-/*
-	Footer
-*****************/
-#contentinfo {padding-bottom: 2em; text-align: right;}
-
-/***** Sections *****/
+/* Sections */
 /* Blog */
 .hentry {
 	display: block;
@@ -426,23 +377,3 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	position: relative;
 	top: 0.5em;
 }
-
-/* About the Author */
-#about-author {
-	background: #f9f9f9;
-	clear: both;
-	font-style: normal;
-	margin: 2em 0;
-	padding: 10px 20px 15px 20px;
-
-	border-radius: 5px;
-}
-
-#about-author strong {
-	color: #C64350;
-	clear: both;
-	display: block;
-	font-size: 1.429em;
-}
-
-#about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
