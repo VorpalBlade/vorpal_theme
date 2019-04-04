@@ -1,0 +1,3 @@
+[submodule "static/fonts/dejavu"]
+	path = static/fonts/dejavu
+	url = https://github.com/VorpalBlade/dejavu-webfonts
