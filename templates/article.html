@@ -5,6 +5,7 @@
 {% block extra_head %}
 {%- if article.description -%}
 <meta name="Description" content="{{ article.description }}" />
+<meta name="author" content="{{ article.author }}" />
 {%- endif -%}
 {%- import 'translations.html' as translations with context -%}
 {%- if translations.entry_hreflang(article) -%}
