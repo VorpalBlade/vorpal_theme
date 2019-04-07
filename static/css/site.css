@@ -301,17 +301,6 @@ section.bibliography {
 }
 
 /* Footer */
-#extras {margin: 0 auto 3em auto; overflow: hidden;}
-
-
-#extras li {border-bottom: 1px solid #fff;}
-#extras h2 {
-	color: #C74350;
-	font-size: 1.429em;
-	margin-bottom: .25em;
-	padding: 0 3px;
-}
-
 .footer a {
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -376,4 +365,37 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	left: 10px;
 	position: relative;
 	top: 0.5em;
+}
+
+nav#article_nav {
+	background-color:  #272822;
+	border-radius: 10px;
+	width: 100%;
+}
+
+.table_layout > div {
+	width: 100%;
+	display: table;
+}
+.table_layout > div {
+	padding: 0px 12px;
+	vertical-align: middle;
+	display: table-cell;
+	white-space: nowrap;
+}
+.table_layout > div.prev {
+	text-align: left;
+}
+.table_layout > div.middle {
+	text-align: center;
+}
+.table_layout > div.next {
+	text-align: right;
+}
+
+@media only screen and (max-device-width: 480px) {
+	/* Skip the no-wrap thing for phones */
+	.table_layout > div {
+		white-space: normal;
+	}
 }

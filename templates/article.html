@@ -26,6 +26,54 @@
 			{%- include 'toc.html' -%}
 			{{ article.content }}
 		</div><!-- /.entry-content -->
+
+		{%- if 'neighbors' in PLUGINS -%}
+		<nav id="article_nav">
+			<div class="table_layout">
+				{%- if article.prev_article -%}
+				<div class="prev">
+					← Previous:
+					<a href="{{ SITEURL }}/{{ article.prev_article.url }}">
+						{{ article.prev_article.title }}
+					</a>
+				</div>
+				{%- endif -%}
+				<div class="middle"></div>
+				{%- if article.next_article -%}
+				<div class="next">
+					Next:
+					<a href="{{ SITEURL }}/{{ article.next_article.url }}">
+						{{ article.next_article.title }}
+					</a>
+					→
+				</div>
+				{%- endif -%}
+			</div>
+				{%- if CATEGORY_NEIGHBORS -%}
+				<div class="table_layout">
+					{%- if article.prev_article_in_category -%}
+					<div class="prev">
+						← Previous in {{ article.category }}: 
+						<a href="{{ SITEURL }}/{{ article.prev_article_in_category.url }}">
+							{{ article.prev_article_in_category.title }}
+						</a>
+					</div>
+					{%- endif -%}
+					<div class="middle"></div>
+					{%- if article.next_article_in_category -%}
+					<div class="next">
+						Next in {{ article.category }}: 
+						<a href="{{ SITEURL }}/{{ article.next_article_in_category.url }}">
+							{{ article.next_article_in_category.title }}
+						</a>
+						→
+					</div>
+					{%- endif -%}
+				</div>
+				{%- endif -%}
+		</nav>
+		{%- endif -%}
+
 		{%- if DISQUS_SITENAME and SITEURL and article.status != "draft" -%}
 		<div class="comments">
 			<h2>Comments !</h2>

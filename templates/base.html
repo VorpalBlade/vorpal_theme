@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-{%- if USE_ASSETS_PLUGIN -%}
+{%- if 'assets' in PLUGINS -%}
 {%- assets filters="cssmin", output="css/style.min.css", "css/reset.css", "css/pygment.css", "css/typogrify.css", "css/fonts.css", "css/site.css" -%}
     <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 {%- endassets -%}
