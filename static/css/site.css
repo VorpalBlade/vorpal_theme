@@ -81,22 +81,6 @@ footer#footer {
 	height: 20px;
 	margin-top: 30px;
 	padding: 12px 0px;
-	display: table;
-}
-
-footer#footer > div {
-	padding: 0px 12px;
-	vertical-align: middle;
-	display: table-cell;
-}
-footer#footer > div.left {
-	text-align: left;
-}
-footer#footer > div.middle {
-	text-align: center;
-}
-footer#footer > div.right {
-	text-align: right;
 }
 
 a {
@@ -373,7 +357,7 @@ nav#article_nav {
 	width: 100%;
 }
 
-.table_layout > div {
+.table_layout {
 	width: 100%;
 	display: table;
 }
@@ -383,13 +367,13 @@ nav#article_nav {
 	display: table-cell;
 	white-space: nowrap;
 }
-.table_layout > div.prev {
+.table_layout > div.left {
 	text-align: left;
 }
 .table_layout > div.middle {
 	text-align: center;
 }
-.table_layout > div.next {
+.table_layout > div.right {
 	text-align: right;
 }
 

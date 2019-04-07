@@ -31,7 +31,7 @@
 		<nav id="article_nav">
 			<div class="table_layout">
 				{%- if article.prev_article -%}
-				<div class="prev">
+				<div class="left">
 					← Previous:
 					<a href="{{ SITEURL }}/{{ article.prev_article.url }}">
 						{{ article.prev_article.title }}
@@ -40,7 +40,7 @@
 				{%- endif -%}
 				<div class="middle"></div>
 				{%- if article.next_article -%}
-				<div class="next">
+				<div class="right">
 					Next:
 					<a href="{{ SITEURL }}/{{ article.next_article.url }}">
 						{{ article.next_article.title }}
@@ -52,7 +52,7 @@
 				{%- if CATEGORY_NEIGHBORS -%}
 				<div class="table_layout">
 					{%- if article.prev_article_in_category -%}
-					<div class="prev">
+					<div class="left">
 						← Previous in {{ article.category }}: 
 						<a href="{{ SITEURL }}/{{ article.prev_article_in_category.url }}">
 							{{ article.prev_article_in_category.title }}
@@ -61,7 +61,7 @@
 					{%- endif -%}
 					<div class="middle"></div>
 					{%- if article.next_article_in_category -%}
-					<div class="next">
+					<div class="right">
 						Next in {{ article.category }}: 
 						<a href="{{ SITEURL }}/{{ article.next_article_in_category.url }}">
 							{{ article.next_article_in_category.title }}
