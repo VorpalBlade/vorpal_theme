@@ -1,6 +1,6 @@
 # Pelican theme for vorpal.se
 
-This is the [pelican][] theme for [vorpal.se](vorpal.se).
+This is the [pelican][] theme for [vorpal.se](https://vorpal.se).
 
 Some parts of the code is based on the pelican default theme called "[notmyidea][]".
 
