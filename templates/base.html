@@ -6,73 +6,74 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 {%- if 'assets' in PLUGINS -%}
 {%- assets filters="cssutils", output="css/style.min.css", "css/reset.css", "css/pygment.css", "css/typogrify.css", "css/fonts.css", "css/site.css" -%}
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+		<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 {%- endassets -%}
 {%- else -%}
 		<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
 {%- endif -%}
+		{%- include 'math.html' -%}
 		{%- if FEED_ALL_ATOM -%}
 		<link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
 		{%- endif -%}
 		{%- if FEED_ALL_RSS -%}
 		<link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
 		{%- endif -%}
-		{%- block extra_head %}{% endblock extra_head %}
+		{%- block extra_head -%}{%- endblock extra_head -%}
 </head>
 
-	<body>
-		<div id="wrapper">
-			<header id="header">
-				<div id="logo"><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %}<strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></div>
-				<nav>
-					<ul>
-					{% for title, link in MENUITEMS %}
-						<li><a href="{{ link }}">{{ title }}</a></li>
-					{% endfor %}
-					{% if DISPLAY_PAGES_ON_MENU %}
-					{% for pg in pages %}
-					{% if pg.display_on_menu %}
-						<li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
-					{% endif %}
-					{% endfor %}
-					{% endif %}
-					{% if DISPLAY_CATEGORIES_ON_MENU %}
-						<li>|</li>
-					{% for cat, null in categories %}
-						<li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-					{% endfor %}
-					{% else %}
-						<li>|</li>
-						<li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a></li>
-						<li><a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a></li>
-						<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
-					{% endif %}
-					</ul>
-				</nav>
-			</header>
-			<div id="main">
-				{% block content %}
-				{% endblock %}
-			</div>
-			<footer id="footer" class="table_layout">
-				<div class="left">
-					<ul class="footer">
-                        {%- if PRIVACY_POLICY_URL -%}
-						<li><a href="{{ SITEURL }}/{{ PRIVACY_POLICY_URL }}">Privacy policy</a></li>
-                        {%- endif -%}
-						{%- if FEED_ALL_ATOM -%}
-						<li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">Atom feed</a></li>
-						{%- endif -%}
-						{%- for name, link in SOCIAL -%}
-							<li><a href="{{ link }}">{{ name }}</a></li>
-						{%- endfor -%}
-					</ul>
-				</div>
-				<div class="middle">&nbsp;</div>
-				<div class="right">
-					{{ FOOTER_RIGHT }}
-				</div>
-			</footer>
+<body>
+	<div id="wrapper">
+		<header id="header">
+			<div id="logo"><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %}<strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></div>
+			<nav>
+				<ul>
+				{% for title, link in MENUITEMS %}
+					<li><a href="{{ link }}">{{ title }}</a></li>
+				{% endfor %}
+				{% if DISPLAY_PAGES_ON_MENU %}
+				{% for pg in pages %}
+				{% if pg.display_on_menu %}
+					<li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+				{% endif %}
+				{% endfor %}
+				{% endif %}
+				{% if DISPLAY_CATEGORIES_ON_MENU %}
+					<li>|</li>
+				{% for cat, null in categories %}
+					<li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+				{% endfor %}
+				{% else %}
+					<li>|</li>
+					<li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a></li>
+					<li><a href="{{ SITEURL }}/{{ TAGS_URL }}">Tags</a></li>
+					<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
+				{% endif %}
+				</ul>
+			</nav>
+		</header>
+		<div id="main">
+			{% block content %}
+			{% endblock %}
 		</div>
-	</body>
+		<footer id="footer" class="table_layout">
+			<div class="left">
+				<ul class="footer">
+											{%- if PRIVACY_POLICY_URL -%}
+					<li><a href="{{ SITEURL }}/{{ PRIVACY_POLICY_URL }}">Privacy policy</a></li>
+											{%- endif -%}
+					{%- if FEED_ALL_ATOM -%}
+					<li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">Atom feed</a></li>
+					{%- endif -%}
+					{%- for name, link in SOCIAL -%}
+						<li><a href="{{ link }}">{{ name }}</a></li>
+					{%- endfor -%}
+				</ul>
+			</div>
+			<div class="middle">&nbsp;</div>
+			<div class="right">
+				{{ FOOTER_RIGHT }}
+			</div>
+		</footer>
+	</div>
+</body>
 </html>

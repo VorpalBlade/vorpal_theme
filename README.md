@@ -18,6 +18,7 @@ The theme has special support for the following plugins:
  * [neighbors](https://github.com/getpelican/pelican-plugins/tree/master/neighbors)
  * [pelican-toc](https://github.com/ingwinlu/pelican-toc)
  * [assets](https://github.com/getpelican/pelican-plugins/tree/master/assets)
+ * [pelican-jsmath][]
  * [pelican-cite][cite] - See notes below!
 
 ### pelican-cite support
@@ -57,6 +58,8 @@ Content related:
    a single author.
  * `CATEGORY_NEIGHBORS` - Add links like "next/previous" in category to
    articles. This is in addition to next/previous article.
+ * `MATH_SCRIPT_TYPE` - Type of math script to use for [pelican-jsmath][]. One
+   of: `mathjax-cdn`, `katex-cdn`, `katex-local`
 
 Disqus support: There are some variables for disqus support inherited from
 [notmyidea][]. This is untested since I don't use it myself!
@@ -70,3 +73,4 @@ In addition URL variables for direct templates are used:
 [pelican]: <https://docs.getpelican.com>
 [notmyidea]: <https://github.com/getpelican/pelican/tree/master/pelican/themes/notmyidea>
 [cite]: <https://github.com/VorpalBlade/pelican-cite>
+[pelican-jsmath]: <https://github.com/svenkreiss/pelican-jsmath>
