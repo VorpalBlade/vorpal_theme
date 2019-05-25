@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
 {%- endif -%}
 		{%- include 'math.html' -%}
+		{%- include 'favicon.html' -%}
 		{%- if FEED_ALL_ATOM -%}
 		<link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
 		{%- endif -%}

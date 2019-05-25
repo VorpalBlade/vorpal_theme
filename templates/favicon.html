@@ -1,0 +1,19 @@
+{%- if FAVICON -%}
+	{%- if FAVICON['ico'] -%}
+		<link rel="shortcut icon" type="image/x-icon" sizes="{{ FAVICON['ico']['sizes'] | join(' ') }}"
+		href="{{ SITEURL }}/favicon.ico" />
+	{%- endif -%}
+	{%- if FAVICON['png'] -%}
+		{%- for size in FAVICON['png']['sizes'] -%}
+			<link rel="icon" type="image/png" sizes="{{size}}x{{size}}" href="{{ SITEURL }}/{{ FAVICON['png']['base_path'] }}{{ size }}.png" />
+		{%- endfor -%}
+	{%- endif -%}
+	{%- if FAVICON['touch'] -%}
+		{%- for size in FAVICON['touch']['sizes'] -%}
+			<link rel="apple-touch-icon" sizes="{{size}}x{{size}}" href="{{ SITEURL }}/{{ FAVICON['touch']['base_path'] }}{{ size }}.png" />
+		{%- endfor -%}
+	{%- endif -%}
+	{%- if FAVICON['svg'] -%}
+		<link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/{{ FAVICON['svg']['path'] }}" />
+	{%- endif -%}
+{%- endif -%}

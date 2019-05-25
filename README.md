@@ -70,6 +70,37 @@ In addition URL variables for direct templates are used:
  * `TAGS_URL`
  * `ARCHIVES_URL`
 
+### Favicon support
+
+The variable FAVICON is used to specify the details of the favicon. An example
+is probably simplest in this case:
+ 
+Assuming you have a directory in your contents root called `favicon` containing
+ * `favicon.ico`
+ * `icon.svg`
+ * `icon-16.png` (a 16x16 icon)
+ * ...
+ * `icon-310.png` (a 310x310 icon)
+
+then the following code in your pelicanconf.py would work:
+
+```python
+EXTRA_PATH_METADATA = {'favicon/favicon.ico': {'path': 'favicon.ico'}}
+STATIC_PATHS = ['favicon']
+FAVICON = {
+    'ico': {'sizes': ['16x16', '24x24', '32x32', '48x48', '64x64']},
+    'svg': {'path': 'favicon/icon.svg'},
+    'png': {'base_path': 'favicon/icon-',
+            'sizes': [196, 160, 128, 96, 64, 32, 16]},
+    'touch': {'base_path': 'favicon/icon-',
+              'sizes': [180, 152, 144, 120, 114, 76, 72, 60, 57]},
+}
+```
+
+Note here that the favicon.ico is assumed to go into the root, all other icons
+can go wherever you want (just adjust the paths). For the .ico you need to list
+the sizes it contains.
+
 [pelican]: <https://docs.getpelican.com>
 [notmyidea]: <https://github.com/getpelican/pelican/tree/master/pelican/themes/notmyidea>
 [cite]: <https://github.com/VorpalBlade/pelican-cite>
