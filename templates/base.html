@@ -58,9 +58,9 @@
 		<footer id="footer" class="table_layout">
 			<div class="left">
 				<ul class="footer">
-											{%- if PRIVACY_POLICY_URL -%}
+					{%- if PRIVACY_POLICY_URL -%}
 					<li><a href="{{ SITEURL }}/{{ PRIVACY_POLICY_URL }}">Privacy policy</a></li>
-											{%- endif -%}
+					{%- endif -%}
 					{%- if FEED_ALL_ATOM -%}
 					<li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">Atom feed</a></li>
 					{%- endif -%}

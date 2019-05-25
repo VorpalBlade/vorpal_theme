@@ -1,4 +1,8 @@
-{%- if 'pelican_jsmath' in PLUGINS -%}
+{# Try to determine if there is math in what we are rendering. Doesn't work for indexes, so we assume they have math. #}
+{%- set not_page_or_has_math = not page or 'class="math">' in page.content -%}
+{%- set not_article_or_has_math = not article or 'class="math">' in article.content -%}
+{%- set contains_math = not_page_or_has_math and not_article_or_has_math -%}
+{%- if 'pelican_jsmath' in PLUGINS and contains_math -%}
 	{%- set katex_version = "0.10.1" -%}
 	{%- if MATH_SCRIPT_TYPE == 'katex-cdn' -%}
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ katex_version }}/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous" />
