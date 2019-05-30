@@ -17,9 +17,20 @@ The theme has special support for the following plugins:
 
  * [neighbors](https://github.com/getpelican/pelican-plugins/tree/master/neighbors)
  * [pelican-toc](https://github.com/ingwinlu/pelican-toc)
- * [assets](https://github.com/getpelican/pelican-plugins/tree/master/assets)
+ * [assets](https://github.com/getpelican/pelican-plugins/tree/master/assets) -
+   See notes below!
  * [pelican-jsmath][]
  * [pelican-cite][cite] - See notes below!
+
+### assets support
+
+This depends on a new unreleased version of the `webassets` python package that
+contains [this pull request](https://github.com/miracle2k/webassets/pull/521).
+
+To install this version use the following command in your venv:
+```
+pip install git+https://github.com/VorpalBlade/webassets.git@sri_calculation
+```
 
 ### pelican-cite support
 The pelican-cite support (currently) requires using my improved and fixed

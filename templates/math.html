@@ -13,10 +13,10 @@
 	{%- elif MATH_SCRIPT_TYPE == 'katex-local' -%}
 		{%- if 'assets' in PLUGINS -%}
 			{%- assets filters="cssutils", output="js/katex-" ~ katex_version ~ "/combined.css", "js/katex-" ~ katex_version ~ "/katex.min.css", "js/katex-" ~ katex_version ~ "/contrib/copy-tex.min.css" -%}
-				<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+				<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}">
 			{%- endassets -%}
 			{%- assets filters="uglifyjs", output="js/katex-" ~ katex_version ~ "/combined.js", "js/katex-" ~ katex_version ~ "/katex.min.js", "js/katex-" ~ katex_version ~ "/contrib/auto-render.min.js", "js/katex-" ~ katex_version ~ "/contrib/copy-tex.min.js" -%}
-				<script defer src="{{ SITEURL }}/{{ ASSET_URL }}" onload="renderMathInElement(document.body);"></script>
+				<script defer src="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" onload="renderMathInElement(document.body);"></script>
 			{%- endassets -%}
 		{%- else -%}
 			<link rel="stylesheet" href="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/js/katex-{{ katex_version }}/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous" />
