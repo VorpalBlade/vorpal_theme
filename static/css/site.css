@@ -8,6 +8,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	line-height: 1.2em;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
