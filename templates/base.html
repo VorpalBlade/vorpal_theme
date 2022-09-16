@@ -24,7 +24,7 @@
 
 <body>
 	<div id="wrapper">
-		<header id="header">
+		<header id="main-header" class="main-header">
 			<div id="logo"><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %}<strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></div>
 			<nav>
 				<ul>
@@ -52,11 +52,11 @@
 				</ul>
 			</nav>
 		</header>
-		<div id="main">
+		<div id="main" class="main">
 			{% block content %}
 			{% endblock %}
 		</div>
-		<footer id="footer" class="table_layout">
+		<footer id="main-footer" class="main-footer table_layout">
 			<div class="left">
 				<ul class="footer">
 					{%- if PRIVACY_POLICY_URL -%}
