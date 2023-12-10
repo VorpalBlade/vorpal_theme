@@ -4,6 +4,9 @@
 		<meta charset="utf-8" />
 		<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+{% if not page or 'error' not in page.metadata %}
+		<link rel="canonical" href="{{ SITEURL }}/{{ output_file | replace("index.html", "", 1) }}" />
+{%- endif -%}
 {%- if 'assets' in PLUGINS -%}
 {%- assets filters="cssutils", output="css/style.min.css", "css/reset.css", "css/pygment.css", "css/typogrify.css", "css/fonts.css", "css/site.css" -%}
 		<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}">
