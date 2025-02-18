@@ -34,9 +34,12 @@
 				integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
 				crossorigin="anonymous"></script>
 			<script defer src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/js/katex-{{ katex_version }}/contrib/auto-render.min.js"
-				integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+				integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+				crossorigin="anonymous"
+				onload="renderMathInElement(document.body);"></script>
 			<script defer src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/js/katex-{{ katex_version }}/contrib/copy-tex.min.js"
-				integrity="sha384-HORx6nWi8j5/mYA+y57/9/CZc5z8HnEw4WUZWy5yOn9ToKBv1l58vJaufFAn9Zzi" crossorigin="anonymous"></script>
+				integrity="sha384-HORx6nWi8j5/mYA+y57/9/CZc5z8HnEw4WUZWy5yOn9ToKBv1l58vJaufFAn9Zzi"
+				crossorigin="anonymous"></script>
 		{%- endif -%}
 	{%- elif MATH_SCRIPT_TYPE == 'mathjax-cdn' -%}
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' async></script>
