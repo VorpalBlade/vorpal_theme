@@ -9,10 +9,10 @@
 {%- endif -%}
 {%- if 'assets' in PLUGINS -%}
 {%- assets filters="cssutils", output="css/style.min.css", "css/reset.css", "css/pygment.css", "css/typogrify.css", "css/fonts.css", "css/site.css" -%}
-		<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}">
+		<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" media="print" onload="this.media='all'" />
 {%- endassets -%}
 {%- else -%}
-		<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+		<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" media="print" onload="this.media='all'" />
 {%- endif -%}
 		{%- include 'math.html' -%}
 		{%- include 'favicon.html' -%}

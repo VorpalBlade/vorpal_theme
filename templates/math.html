@@ -8,7 +8,8 @@
 		<link rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/katex@{{ katex_version }}/dist/katex.min.css"
 			integrity=""
-			crossorigin="anonymous" />
+			crossorigin="anonymous"
+			media="print" onload="this.media='all'" />
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ katex_version }}/dist/katex.min.js"
 			integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
 			crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@
 	{%- elif MATH_SCRIPT_TYPE == 'katex-local' -%}
 		{%- if 'assets' in PLUGINS -%}
 			{%- assets filters="cssutils", output="js/katex-" ~ katex_version ~ "/combined.css", "js/katex-" ~ katex_version ~ "/katex.min.css" -%}
-				<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}">
+				<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" media="print" onload="this.media='all'" />
 			{%- endassets -%}
 			{%- assets filters="uglifyjs", output="js/katex-" ~ katex_version ~ "/combined.js", "js/katex-" ~ katex_version ~ "/katex.min.js", "js/katex-" ~ katex_version ~ "/contrib/auto-render.min.js", "js/katex-" ~ katex_version ~ "/contrib/copy-tex.min.js" -%}
 				<script defer src="{{ SITEURL }}/{{ ASSET_URL }}" integrity="{{ ASSET_SRI }}" onload="renderMathInElement(document.body);"></script>
@@ -29,7 +30,7 @@
 		{%- else -%}
 			<link rel="stylesheet" href="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/js/katex-{{ katex_version }}/katex.min.css"
 				integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
-				crossorigin="anonymous" />
+				crossorigin="anonymous" media="print" onload="this.media='all'" />
 			<script defer src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/js/katex-{{ katex_version }}/katex.min.js"
 				integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
 				crossorigin="anonymous"></script>
