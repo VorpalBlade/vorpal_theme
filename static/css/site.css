@@ -166,8 +166,9 @@ dd {margin-left: 1.5em;}
 
 /* Quotes */
 blockquote {
-	margin: 20px;
-	font-style: italic;
+	margin: 1.5em;
+	padding-left: .75em;
+	border-left: .25em solid #f8f8f2;
 }
 cite {}
 
